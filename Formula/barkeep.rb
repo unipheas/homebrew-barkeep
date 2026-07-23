@@ -4,7 +4,7 @@ class Barkeep < Formula
   url "https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "3ef6e674923eaf3b90c8815dbcaf0d82f5401e2d1f60f8ec3f8877c40488cee9"
   license "MIT"
-  revision 1
+  revision 2
 
   depends_on macos: :sonoma
 
@@ -16,9 +16,7 @@ class Barkeep < Formula
   def install
     bin.install "bin/barkeep"
 
-    resource("app").stage do
-      prefix.install "BarKeep.app"
-    end
+    resource("app").stage prefix/"BarKeep.app"
 
     libexec.install "mcp/barkeep_mcp.py"
     pkgshare.install "hooks"
