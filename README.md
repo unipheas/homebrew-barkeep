@@ -19,10 +19,18 @@ brew install barkeep-cli
 
 ## Maintainer notes
 
-After tagging a release in the main repo (for example, `v1.0.9`):
+After tagging a release in the main repo (for example, `v1.0.11`):
 
 ```bash
 curl -sL https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.11.tar.gz | shasum -a 256
 ```
 
-Update `url` and `sha256` in `Formula/barkeep.rb`, commit, push. Users get the new version with `brew upgrade barkeep`.
+Update `url` and `sha256` in `Formula/barkeep-cli.rb`, plus `version` and
+`sha256` in `Casks/barkeep.rb`, then commit and push. Users get the updates
+with:
+
+```bash
+brew update
+brew upgrade --cask barkeep
+brew upgrade barkeep-cli
+```
