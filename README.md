@@ -19,10 +19,10 @@ brew install barkeep-cli
 
 ## Maintainer notes
 
-After tagging a release in the main repo (for example, `v1.0.11`):
+After tagging a release in the main repo (for example, `v1.0.12`):
 
 ```bash
-curl -sL https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.11.tar.gz | shasum -a 256
+curl -sL https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.12.tar.gz | shasum -a 256
 ```
 
 Update `url` and `sha256` in `Formula/barkeep-cli.rb`, plus `version` and
