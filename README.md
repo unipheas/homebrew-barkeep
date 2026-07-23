@@ -6,13 +6,16 @@ Homebrew tap for [BarKeep](https://github.com/unipheas/barkeep) — a macOS menu
 
 ```bash
 brew tap unipheas/barkeep
-brew install barkeep
+brew install --cask barkeep
 ```
 
-Then follow the caveats printed at the end (copy `BarKeep.app` into `/Applications`).
+Homebrew installs `BarKeep.app` directly into `/Applications`.
 
-The stable formula installs the app from the corresponding GitHub Release, so
-Xcode is not required.
+For the `barkeep` CLI, MCP server, and Claude Code hooks:
+
+```bash
+brew install barkeep
+```
 
 ## Maintainer notes
 

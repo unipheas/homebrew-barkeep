@@ -1,22 +1,15 @@
 class Barkeep < Formula
-  desc "Menu bar app and CLI for the Busy Bar over USB or Wi-Fi"
+  desc "CLI and developer integrations for the Busy Bar"
   homepage "https://github.com/unipheas/barkeep"
   url "https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "3ef6e674923eaf3b90c8815dbcaf0d82f5401e2d1f60f8ec3f8877c40488cee9"
   license "MIT"
-  revision 2
+  revision 3
 
   depends_on macos: :sonoma
 
-  resource "app" do
-    url "https://github.com/unipheas/barkeep/releases/download/v1.0.2/BarKeep-1.0.2.zip"
-    sha256 "e4920bee4aa0d1ae89a837bf0ad8625985da24e1352dd82453a8c12ea89c1dd9"
-  end
-
   def install
     bin.install "bin/barkeep"
-
-    resource("app").stage prefix/"BarKeep.app"
 
     libexec.install "mcp/barkeep_mcp.py"
     pkgshare.install "hooks"
@@ -24,18 +17,6 @@ class Barkeep < Formula
 
   def caveats
     <<~EOS
-      The menu bar app was built at:
-        #{opt_prefix}/BarKeep.app
-
-      Copy it into /Applications (copy, don't symlink — macOS ties
-      permissions like Full Disk Access to the real bundle):
-        cp -R #{opt_prefix}/BarKeep.app /Applications/
-        open /Applications/BarKeep.app
-
-      The release app uses an ad-hoc signature. After an upgrade, you may
-      need to re-grant Full Disk Access (only needed for notification
-      forwarding).
-
       MCP server (for Claude and other MCP clients):
         claude mcp add --scope user barkeep -- /usr/bin/python3 #{opt_libexec}/barkeep_mcp.py
 
