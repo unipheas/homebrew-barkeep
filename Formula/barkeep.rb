@@ -32,9 +32,9 @@ class Barkeep < Formula
         cp -R #{opt_prefix}/BarKeep.app /Applications/
         open /Applications/BarKeep.app
 
-      Because Homebrew builds it locally with an ad-hoc signature, if you
-      later upgrade the formula you'll need to re-grant Full Disk Access
-      (only needed for notification forwarding).
+      The release app uses an ad-hoc signature. After an upgrade, you may
+      need to re-grant Full Disk Access (only needed for notification
+      forwarding).
 
       MCP server (for Claude and other MCP clients):
         claude mcp add --scope user barkeep -- /usr/bin/python3 #{opt_libexec}/barkeep_mcp.py
