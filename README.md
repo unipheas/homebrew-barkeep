@@ -102,8 +102,10 @@ sequence above on a clean Mac.
 For application changes, issues, and feature requests, use the
 [main BarKeep repository](https://github.com/unipheas/barkeep). Pull requests
 that update the cask, formula, installation guidance, or release automation are
-welcome in this tap.
+welcome in this tap. See [CONTRIBUTING.md](CONTRIBUTING.md) for the release and
+validation workflow.
 
 Never commit API passwords, service tokens, signing credentials, or private
 keys. Report security concerns through
-[BarKeep's private security advisory form](https://github.com/unipheas/barkeep/security/advisories/new).
+[BarKeep's private security advisory form](https://github.com/unipheas/barkeep/security/advisories/new);
+see [SECURITY.md](SECURITY.md) for scope and reporting guidance.
