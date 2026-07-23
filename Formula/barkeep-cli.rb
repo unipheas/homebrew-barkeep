@@ -15,11 +15,17 @@ class BarkeepCli < Formula
 
   def caveats
     <<~EOS
-      MCP server (for Claude and other MCP clients):
+      MCP server for Claude Code:
         claude mcp add --scope user barkeep -- /usr/bin/python3 #{opt_libexec}/barkeep_mcp.py
 
-      Claude Code hook scripts are in:
+      MCP server for Codex and ChatGPT desktop:
+        codex mcp add barkeep -- /usr/bin/python3 #{opt_libexec}/barkeep_mcp.py
+
+      Claude and Codex hook scripts are in:
         #{opt_pkgshare}/hooks
+
+      For Wi-Fi, set BARKEEP_HOST to the bar's IP address and BARKEEP_TOKEN
+      to its local HTTP API password. Cloud API tokens do not work locally.
     EOS
   end
 
