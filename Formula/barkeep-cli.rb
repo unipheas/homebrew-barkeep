@@ -1,8 +1,8 @@
 class BarkeepCli < Formula
   desc "CLI and developer integrations for the Busy Bar"
   homepage "https://github.com/unipheas/barkeep"
-  url "https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "8c3784ac6699c0d4eba73c81357e1a380930edfb2664015c5d0c76c517ac03eb"
+  url "https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "8af752af3f8dd25f470906516f158df8d032a86311e6846117604beec5259957"
   license "MIT"
   depends_on macos: :sonoma
 
