@@ -1,6 +1,6 @@
 cask "barkeep" do
-  version "1.0.8"
-  sha256 "a2d567170a706076bb513002088f6094416fc21537aaa860732ff65eafa98f7d"
+  version "1.0.9"
+  sha256 "4fd153b211a312a240b39f80b70ebb830e7e485627b1fb1e89c59088a14368ae"
 
   url "https://github.com/unipheas/barkeep/releases/download/v#{version}/BarKeep-#{version}.zip"
   name "BarKeep"
