@@ -1,6 +1,6 @@
 cask "barkeep" do
-  version "1.0.4"
-  sha256 "ea059df0fd55142a4e6b120362936b7c812d73bf6a404c121b5dae743da70a48"
+  version "1.0.5"
+  sha256 "ca7c76043cfce5295ff310949d135aaeb64f1ac08df83595283d95762f153a3a"
 
   url "https://github.com/unipheas/barkeep/releases/download/v#{version}/BarKeep-#{version}.zip"
   name "BarKeep"
@@ -10,6 +10,8 @@ cask "barkeep" do
   depends_on macos: :sonoma
 
   app "BarKeep.app"
+
+  uninstall quit: "dev.barkeep.mac"
 
   caveats <<~EOS
     BarKeep is currently ad-hoc signed and not notarized. On first launch,
