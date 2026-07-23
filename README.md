@@ -1,6 +1,11 @@
 # homebrew-barkeep
 
-Homebrew tap for [BarKeep](https://github.com/unipheas/barkeep) — a macOS menu bar companion for the Busy Bar over USB or Wi-Fi.
+Official Homebrew tap for
+[BarKeep](https://github.com/unipheas/barkeep) — the open-source macOS menu bar
+companion, CLI, and developer toolkit for the Busy Bar over USB or Wi-Fi.
+
+BarKeep and this tap are released under the [MIT License](LICENSE). Forks,
+modifications, and contributions are welcome under the same terms.
 
 ## Install
 
@@ -91,3 +96,14 @@ brew style Casks/barkeep.rb Formula/barkeep-cli.rb
 
 After pushing, run strict audits against the public tap and perform the upgrade
 sequence above on a clean Mac.
+
+## Contributing
+
+For application changes, issues, and feature requests, use the
+[main BarKeep repository](https://github.com/unipheas/barkeep). Pull requests
+that update the cask, formula, installation guidance, or release automation are
+welcome in this tap.
+
+Never commit API passwords, service tokens, signing credentials, or private
+keys. Report security concerns through
+[BarKeep's private security advisory form](https://github.com/unipheas/barkeep/security/advisories/new).
