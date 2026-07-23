@@ -9,13 +9,10 @@ brew tap unipheas/barkeep
 brew install barkeep
 ```
 
-To install the latest development version from source:
-
-```bash
-brew install --HEAD unipheas/barkeep/barkeep
-```
-
 Then follow the caveats printed at the end (copy `BarKeep.app` into `/Applications`).
+
+The stable formula installs the app from the corresponding GitHub Release, so
+Xcode is not required.
 
 ## Maintainer notes
 

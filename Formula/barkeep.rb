@@ -4,22 +4,21 @@ class Barkeep < Formula
   url "https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "3ef6e674923eaf3b90c8815dbcaf0d82f5401e2d1f60f8ec3f8877c40488cee9"
   license "MIT"
-  head "https://github.com/unipheas/barkeep.git", branch: "main"
+  revision 1
 
-  depends_on xcode: ["15.0", :build]
   depends_on macos: :sonoma
 
+  resource "app" do
+    url "https://github.com/unipheas/barkeep/releases/download/v1.0.2/BarKeep-1.0.2.zip"
+    sha256 "e4920bee4aa0d1ae89a837bf0ad8625985da24e1352dd82453a8c12ea89c1dd9"
+  end
+
   def install
-    system "swift", "build", "-c", "release", "--disable-sandbox"
     bin.install "bin/barkeep"
 
-    app = prefix/"BarKeep.app"
-    (app/"Contents/MacOS").mkpath
-    (app/"Contents/Resources").mkpath
-    cp ".build/release/BarKeep", app/"Contents/MacOS/BarKeep"
-    cp "packaging/Info.plist", app/"Contents/Info.plist"
-    cp "assets/AppIcon.icns", app/"Contents/Resources/AppIcon.icns"
-    system "codesign", "--force", "-s", "-", app
+    resource("app").stage do
+      prefix.install "BarKeep.app"
+    end
 
     libexec.install "mcp/barkeep_mcp.py"
     pkgshare.install "hooks"
