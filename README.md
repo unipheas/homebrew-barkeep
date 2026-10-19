@@ -39,8 +39,9 @@ open -a BarKeep
 USB uses the Busy Bar's fixed `10.0.4.20` address without authentication. For
 Wi-Fi, enable HTTP API access in the bar's local web interface, set its numeric
 password, then enter the Wi-Fi address and that password in BarKeep Settings.
-Select **Wi-Fi** in the connection switch above the tabs; select **USB** to
-return to USB. The selection and Wi-Fi settings are saved across restarts.
+Open **Settings → Connection** to select **Wi-Fi** or **USB**. The address,
+device-name editor and password appear only for Wi-Fi. The connection choice
+and saved Wi-Fi settings are retained across restarts.
 
 Use the physical bar's local HTTP API password. Tokens generated at
 `cloud.busy.app` target the cloud API and do not authenticate the local device.
