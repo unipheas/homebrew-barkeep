@@ -1,8 +1,8 @@
 class BarkeepCli < Formula
   desc "CLI and developer integrations for the Busy Bar"
   homepage "https://github.com/unipheas/barkeep"
-  url "https://github.com/unipheas/barkeep/archive/refs/tags/v1.0.15.tar.gz"
-  sha256 "e79a4353b135229d3dfae1cde8c14a2d8d1e10724cb1793d1653a23b49faa404"
+  url "https://github.com/unipheas/barkeep/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "5918e57feeaf9b9059add70bfc89bbb11d966d8833cc3f7bc78f8b032f30e3d1"
   license "MIT"
   depends_on macos: :sonoma
 
@@ -30,6 +30,7 @@ class BarkeepCli < Formula
   end
 
   test do
-    assert_match "barkeep", shell_output("#{bin}/barkeep 2>&1", 1)
+    assert_match "barkeep", shell_output("#{bin}/barkeep --help")
+    assert_path_exists pkgshare/"hooks/agent_hook.py"
   end
 end
